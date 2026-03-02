@@ -5,8 +5,14 @@ import productRoute from "./src/routes/productRoute.js"
 import categoryRoute from "./src/routes/categoryRoute.js"
 import userRoute from "./src/routes/userRoute.js"
 import session from "express-session"
+import cors from 'cors'
 
 const app = express()
+
+app.use(cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"]
+}))
 
 app.use(express.json())
 
